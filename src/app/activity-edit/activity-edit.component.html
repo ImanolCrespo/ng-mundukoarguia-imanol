@@ -1,0 +1,91 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+  
+    <div class="card-body">
+      <form novalidate
+            (ngSubmit)="saveActivity()"
+            [formGroup]="activityForm">
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="activityNameId">Nombre</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="activityNameId"
+                   type="text"
+                   placeholder="Nombre"
+                   formControlName="nombre"
+                   nombre="nombre" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="ratingId">Precio</label>
+  
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="ratingId"
+                   type="text"
+                   placeholder="Precio"
+                   formControlName="precio"
+                   nombre="precio" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="fechaPartidaId">Fecha salida</label>
+  
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="fechaPartidaId"
+                   type="text"
+                   formControlName="fechaPartida"
+                   nombre="fechaPartida" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="descriptionId">Fecha retorno</label>
+  
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="descriptionId"
+                   type="text"
+                   formControlName="fechaFin"
+                   nombre="description" />
+          </div>
+        </div>
+        
+  
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button class="btn btn-primary mr-3"                    
+                    type="submit">
+              Save
+            </button>
+            <button class="btn btn-outline-secondary mr-3"                    
+                    type="button"
+                    title="Cancel your edits"
+                    [routerLink]="['']">
+              Cancel
+            </button>
+            <button class="btn btn-outline-warning"                  
+                    type="button"
+                    title="Delete this activity"
+                    (click)="deleteActivity()">
+              Delete
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>

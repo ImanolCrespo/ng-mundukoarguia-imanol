@@ -1,0 +1,11 @@
+<div class="jumbotron">
+  <img src="/assets/images/flor.jpg" class="img-fluid float-left" width="200">
+  <h1 class="display-4">Viaje con nosotras, si quiere gozar!
+  </h1>
+</div>
+
+<div class="row">
+  <div *ngFor="let activity of activities" class="col-12 col-md-6  col-lg-4">
+    <app-activity-item [activity]="activity"></app-activity-item>
+  </div>
+</div>

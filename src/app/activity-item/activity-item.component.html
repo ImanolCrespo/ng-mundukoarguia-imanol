@@ -1,0 +1,16 @@
+<!-- TODO Modificar valores-->
+
+<figure class="card">
+  <figcaption class="card-header">
+    <h5>Nombre: <a [routerLink]="['/activities', activity.id]">{{activity.nombre}}</a>
+       <!--| currency-->
+    </h5>
+    <p>Precio: <span>{{activity.precio}}</span></p>
+  </figcaption>
+  <figcaption class="card-body">
+    
+    <p>Ciudades de paso: </p>
+    <li class="list-group-item" *ngFor="let ciudad of activity.lugares">{{ciudad}}</li>
+    
+  </figcaption>
+</figure> 
